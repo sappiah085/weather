@@ -1,0 +1,141 @@
+:root {
+  --defaultFont:Helvetica;
+  --lightBlue:#7bc5fc;
+  --numbColor:#b8d3ff;
+  --greyColor:#eeedf2;
+  --deepBlue:#589afa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--numbColor);
+  font-family: var(--defaultFont);
+}
+.phone{
+  overflow: hidden;
+  position: relative;
+  box-shadow: 
+  1px 1px 10px var(--greyColor),
+  -1px -1px 90px var(--greyColor);
+  background-color: var(--deepBlue);
+  border-radius: 15px;
+  outline: 1px solid var(--lightBlue);
+  width: 95%;
+  align-content: center;
+  max-width: 500px;
+  padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+}
+.data{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.greeting{
+  text-align: center;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: .3em;
+}
+.date{
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: white;
+}
+.temp{
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--numbColor);
+}
+.temp sup{
+  font-weight: 200;
+  font-size: 2rem;
+}
+.temp span{
+  font-size: 3rem;
+  font-weight: 300;
+}
+.weather{
+  color: var(--greyColor);
+  font-size: 2rem;
+  font-weight: 350;
+}
+.locat{
+  position: relative;
+  color: var(--numbColor);
+  font-size: 1.5rem;
+  font-weight: 350;
+}
+.locat::after{
+  content: '';
+  position: absolute;
+  left: 0%;
+  top:150%;
+  height: 2px;
+  width: 100%;
+  background-color: var(--lightBlue);
+}
+.summary{
+  display: flex;
+  width: 100%;
+  padding: 3em 0;
+  column-gap: 2em;
+  justify-content: center;
+}
+.humidity, .cloudiness, .wind{
+  color: var(--numbColor);
+  font-size: 1rem;
+  row-gap: .6em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+i{
+  color: white;
+  font-size: 2.5rem;
+}
+.toggle, .toggle::after{
+  cursor: pointer;
+  left: 90%;
+  height: .7em;
+  width: .7em;
+  border-radius: 50%;
+  position: absolute;
+  background-color: var(--greyColor);
+}
+.toggle::after{
+  content: '';
+  top: -10px;
+}
+
+input{
+  transition: all 1s;
+  outline: 1px solid var(--deepBlue);
+  border: none;
+  height: 1.5em;
+  border-radius: 5px;
+  caret-color: var(--deepBlue);
+  font-size: 1rem;
+  text-align: center;
+  position: absolute;
+  top: -100%;
+}
+input:placeholder{
+  color: var(--deepBlue);
+}
+input.active{
+  top: 2%;
+}
